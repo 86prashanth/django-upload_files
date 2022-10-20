@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<title>Upload_show</title>
+
+<head>
+
+    <body>
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%} {{form.as_p}}
+            <input type="submit" value="submit">
+        </form>
+        {% if img_obj %}
+        <h3>Successfully upload.</h3>
+        <img src="{{img_obj.image.url}}" alt="connect" style="max-width: 150px; max-height:150px;"> {%endif%}
+    </body>
+</head>
+
+</html>
